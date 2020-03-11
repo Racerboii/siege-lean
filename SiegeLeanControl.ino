@@ -113,6 +113,8 @@ void loop() {
       digitalWrite(Pin_Led_R, LOW);
       Keyboard.release(KEY_F9);
     }
+    
+    // Print to Serial Monitor
     Serial.print("\n\n                 |   X   |    Y    |    Z");
     Serial.print("\n--------------------------------------------");
 
@@ -175,5 +177,5 @@ void loop() {
     digitalWrite(Pin_Led_L, LOW);
     digitalWrite(Pin_Led_R, LOW);
   }
-  //delay(100); // 10 Hz Refresh rate for serial monitor
+  //delay(100); // 10 Hz
 }
