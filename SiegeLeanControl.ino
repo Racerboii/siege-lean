@@ -27,7 +27,7 @@ bool buttonRead = 1, buttonLast = 1;
 
 void setup() {
   Serial.begin(9600);
-  //Keyboard.begin();
+  Keyboard.begin();
 
   // Digital Inputs
   pinMode(Pin_Switch, INPUT);
@@ -95,23 +95,23 @@ void loop() {
     if (Theta > Ang_Target) {
       Lean_Left = 1;
       digitalWrite(Pin_Led_L, HIGH);
-      //Keyboard.press(KEY_F7);
+      Keyboard.press(KEY_F7);
     }
     if (Theta < Ang_Target - Ang_Threshold) {
       Lean_Left = 0;
       digitalWrite(Pin_Led_L, LOW);
-      //Keyboard.release(KEY_F7);
+      Keyboard.release(KEY_F7);
     }
 
     if (Theta < -Ang_Target) {
       Lean_Right = 1;
       digitalWrite(Pin_Led_R, HIGH);
-      //Keyboard.press(KEY_F9);
+      Keyboard.press(KEY_F9);
     }
     if (Theta > -Ang_Target + Ang_Threshold) {
       Lean_Right = 0;
       digitalWrite(Pin_Led_R, LOW);
-      //Keyboard.release(KEY_F9);
+      Keyboard.release(KEY_F9);
     }
     Serial.print("\n\n                 |   X   |    Y    |    Z");
     Serial.print("\n--------------------------------------------");
@@ -175,5 +175,5 @@ void loop() {
     digitalWrite(Pin_Led_L, LOW);
     digitalWrite(Pin_Led_R, LOW);
   }
-  delay(100); // 100 Hz
+  //delay(100); // 10 Hz Refresh rate for serial monitor
 }
