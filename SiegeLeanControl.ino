@@ -91,7 +91,7 @@ void loop() {
     float Psi = atan(Acc_Y / sqrt(sq(Acc_X) + sq(Acc_Z))) * (180 / M_PI);
     float Phi = atan(sqrt(sq(Acc_X) + sq(Acc_Y)) / Acc_Z) * (180 / M_PI);
 
-    // Latch Leaning Command
+    // Leaning Command Latches
     if (Theta > Ang_Target) {
       Lean_Left = 1;
       digitalWrite(Pin_Led_L, HIGH);
@@ -170,8 +170,7 @@ void loop() {
     Serial.print(Ang_Threshold);
     Serial.print(" Deg.");
   } else {
-    Lean_Left = 0;
-    Lean_Right = 0;
+    Lean_Left = Lean_Right = 0;
 
     digitalWrite(Pin_Led, LOW);
     digitalWrite(Pin_Led_L, LOW);
