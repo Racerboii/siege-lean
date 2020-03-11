@@ -40,10 +40,10 @@ void setup() {
 void loop() {
   int Switch_Enable = digitalRead(Pin_Switch);
 
-  Serial.write(27); // ESC command
-  Serial.print("[2J"); // clear screen command
-  Serial.write(27);// ESC command
-  Serial.print("[H"); // cursor to home command
+  Serial.write(27); // ESC
+  Serial.print("[2J"); // Clear screen
+  Serial.write(27); // ESC
+  Serial.print("[H"); // Cursor to home
   Serial.print("Enable Switch: ");
   Serial.print(Switch_Enable);
 
